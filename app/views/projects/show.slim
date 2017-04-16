@@ -1,3 +1,22 @@
 h1 = @project.name
 p = @project.short_description
 p = @project.summary
+
+h2 = "Milestones"
+
+- if @milestones.present?
+  - @milestones.each do |milestone|
+    div
+      = milestone.name
+      = milestone.delivery_date
+      = milestone.description
+      = milestone.status
+      = link_to edit_project_milestone_path(milestone.project.id, milestone.id)
+        = "Modifier"
+      = link_to project_milestone_path(milestone.project.id, milestone.id), method: :delete
+        = "Supprimer"
+- else 
+  = "Vous n'avez aucune action en cours."
+  
+= link_to new_project_milestone_path(@project)
+  = "Nouvelle action"

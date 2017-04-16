@@ -21,3 +21,22 @@ quorum = Project.new({
   summary: "On a fait çi et ça et ça aussi"
 })
 quorum.save
+
+# Milestones
+landing_page = Milestone.new({
+  delivery_date: DateTime.now + 1,
+  name: "Landing page",
+  description: "Description",
+  status: "Livré",
+  project_id: 1
+})
+landing_page.save
+
+ios_app = Milestone.new({
+  delivery_date: DateTime.now + 2,
+  name: "App iOS",
+  description: "Description",
+  status: "En cours",
+  project_id: 1
+})
+ios_app.save

@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @milestones = @project.milestones
   end
 
   def new
