@@ -1,0 +1,6 @@
+h1 = "Bienvenue sur Muxu.Delivery 🚚"
+p = "Voici les projets en cours"
+
+- @projects.each do |project|
+  = link_to project_path(project)
+    p = project.name
