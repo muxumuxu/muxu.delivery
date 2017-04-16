@@ -1,0 +1,15 @@
+h1 = @project.name
+p = @project.short_description
+p = @project.summary
+
+h2 = "Milestones"
+
+- if @milestones.present?
+  - @milestones.each do |milestone|
+    div
+      = milestone.name
+      = milestone.delivery_date
+      = milestone.description
+      = milestone.status
+- else 
+  = "Il n'y a aucune action en cours."
