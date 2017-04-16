@@ -1,6 +1,15 @@
 h1 = "Bienvenue sur Muxu.Delivery 🚚"
-p = "Voici les projets en cours"
+h2 = "Voici les projets en cours"
 
 - @projects.each do |project|
-  = link_to project_path(project)
+  div
     p = project.name
+    = link_to project_path(project)
+      = "Voir"
+    = link_to edit_project_path(project)
+      = "Modifier"
+    = link_to project_path(project), method: :delete
+      = "Supprimer"
+
+= link_to new_project_path
+  = "Nouveau projet"
